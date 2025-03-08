@@ -13,7 +13,7 @@ load_dotenv()
 
 # Setup
 def setup_ai_model():
-    api_key = "AIzaSyDOGNoA-G1ceO6rW0S_ujw6Y0opowIQGf8"
+    api_key = st.secrets["API_KEY1"]
     chat_template = ChatPromptTemplate(
         messages=[
             ("system", """You are an AI-powered travel planning assistant. Provide a detailed travel plan from [Source] to [Destination] for the dates [Start Date] to [End Date], including all modes of transport (flights, trains, buses, cabs), estimated costs, and any relevant travel tips."""),
@@ -43,7 +43,7 @@ major_cities = [
 
 # Function to get weather forecast
 def get_weather_forecast(location):
-    weather_api_key = "d6956b719d7c080569e6f5e53d369b53"
+    weather_api_key = st.secrets["API_KEY2"]
     url = f"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={weather_api_key}"
     
     try:
